@@ -5,7 +5,8 @@ const websocketServer = (expressServer) => {
 
   // 建立新的ws伺服器
   const websocketServer = new WebSocket.Server({
-    server:expressServer
+    // server:expressServer
+    noServer: true,
   });
 
   websocketServer.on(
@@ -25,7 +26,8 @@ const websocketServer = (expressServer) => {
       });
     }
   );
-
+  const PORT = process.env.PORT || 3000
+  server.listen(PORT)
   return websocketServer;
 };
 
