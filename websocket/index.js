@@ -1,6 +1,7 @@
 const WebSocket = require('ws');
 
 const websocketServer = (expressServer) => {
+  const server = expressServer()
   let wsUser = [];
 
   // 建立新的ws伺服器
@@ -26,8 +27,8 @@ const websocketServer = (expressServer) => {
       });
     }
   );
-  const PORT = process.env.PORT || 3000
-  server.listen(PORT)
+  const PORT = process.env.PORT || 3005
+  server.listen(3005)
   return websocketServer;
 };
 
